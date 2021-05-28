@@ -25,6 +25,7 @@
     "bootstrap": "^4.5.1",
     "file-saver": "^2.0.2",
     "jquery": "^3.5.1",
+    "leaflet": "^1.7.1",
     "ng-material-multilevel-menu": "^4.12.2",
     "rxjs": "~6.5.5",
     "sweetalert2": "^9.17.1",
