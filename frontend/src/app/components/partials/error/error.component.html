@@ -1,0 +1,5 @@
+<div class="alert alert-danger my-3" *ngIf="error">
+  <div *ngFor="let item of error | keyvalue">
+    {{item.value}}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<main>
+  <app-navbar [logged]="logged"></app-navbar>
+
+  <mat-sidenav-container class="w-100 h-100" autosize>
+    <mat-sidenav mode="side" opened *ngIf="logged">
+     <app-menu></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="m-3">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

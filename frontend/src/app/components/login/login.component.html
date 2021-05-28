@@ -1,0 +1,41 @@
+<div class="mt-4 container">
+  <div class="card card col-md-6 p-0 offset-md-3">
+    <div class="card-header">Logueate aquí</div>
+    <div class="card-body">
+      <form class="px-4" [formGroup]="form" (ngSubmit)="login()" autocomplete="off">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" name="email" class="form-control" formControlName="email"
+              placeholder="user@example.com">
+            <div class="mt-2" *ngIf="form.get('email') && form.get('email').touched">
+              <p class="alert alert-danger" *ngIf="form.get('email').hasError('required')">El email es requerido.</p>
+              <p class="alert alert-danger" *ngIf="form.get('email').hasError('email')">El email es debe tener un
+                formato valido.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña</label>
+          <div class="col-sm-9">
+            <input type="password" name="password" class="form-control" formControlName="password">
+            <div class="mt-2" *ngIf="form.get('password') && form.get('password').touched">
+              <p class="alert alert-danger" *ngIf="form.get('password').hasError('required')">La contraseña es
+                requerida.</p>
+            </div>
+          </div>
+        </div>
+
+        <app-error [error]="error"></app-error>
+
+        <div class="form-group row">
+          <div class="col-sm-9 offset-3">
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
